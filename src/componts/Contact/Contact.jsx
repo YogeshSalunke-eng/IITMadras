@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 import mail_icon from '../../assets/mail-icon.png'
 import phone_icon from '../../assets/phone-icon.png'
@@ -7,30 +7,9 @@ import location_icon from '../../assets/location-icon.png'
 
 const Contact = () => {
 
-const [result, setResult] = React.useState("");
+const [result, setResult]=useState('');
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "6f9f2d7d-c2c1-44c2-8a6e-d061df7df94f");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
-  };
+  
 
 
 
@@ -57,7 +36,7 @@ const [result, setResult] = React.useState("");
         </ul>
         </div>
         <div className="contact-col1">
-            <form onSubmit={onSubmit}>
+            <form>
                 <label>Your name</label>
                 <input type="text" name='name' required placeholder='enter your name'/>
                 <label>phone number</label>
@@ -66,7 +45,6 @@ const [result, setResult] = React.useState("");
                                 <textarea name="message" rows="6" placeholder='enter your message' required></textarea>
 <button type='submit' className='btn submit-btn'>submit</button>
             </form> 
-            <span>{result}</span>
         </div>
     </div>
     </>
