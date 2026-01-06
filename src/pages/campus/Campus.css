@@ -1,0 +1,59 @@
+
+.campus_title{
+text-align: center;
+color:blue;
+font-weight: 600;
+margin-top: 100px;
+}
+.campus{
+    margin: auto;
+    width: 90%;
+text-align: center
+;
+}
+.gallery{
+    margin-top:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:40px;
+}
+.gallery img{
+    width: 23%;
+    border-radius: 10px;
+    height:350px;
+}
+.see-more-btn{
+background-color: blue;
+color: white;
+border: none;
+
+}
+@media(max-width:800px){
+    .gallery{
+        flex-wrap: wrap;
+
+    }
+    .gallery img{
+        width:47%;
+        margin-bottom:25px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
